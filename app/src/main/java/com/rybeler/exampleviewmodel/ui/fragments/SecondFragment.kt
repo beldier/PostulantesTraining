@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
-import com.rybeler.exampleviewmodel.R
+import androidx.navigation.fragment.navArgs
 import com.rybeler.exampleviewmodel.data.network.ApiClient
-import com.rybeler.exampleviewmodel.databinding.ActivitySecondBinding
 import com.rybeler.exampleviewmodel.databinding.FragmentSecondBinding
 import com.rybeler.exampleviewmodel.ui.adapters.CharactersAdapter
 import kotlinx.coroutines.launch
@@ -16,6 +15,7 @@ import kotlinx.coroutines.launch
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding
+    private val args: SecondFragmentArgs  by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,14 +28,7 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        setContentView(binding.root)
-//        setSupportActionBar(binding.myToolbar2)
-//        val tituloIntent = intent.getStringExtra("palabra")
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-//        binding.textoTitulo.text = tituloIntent
-//        binding.backButton.setOnClickListener {
-//            finish()
-//        }
+        binding.titleText.text = args.tituloText
 
         lifecycleScope.launch {
             val listCharacters = ApiClient.charactersService.getCharacters(0, 100).data.results

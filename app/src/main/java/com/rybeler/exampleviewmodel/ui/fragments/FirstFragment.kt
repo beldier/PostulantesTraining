@@ -47,7 +47,7 @@ class FirstFragment : Fragment() {
         }
 
         binding.navegarButton.setOnClickListener {
-            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment2()
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment2("Hello world")
             findNavController().navigate(action)
         }
     }

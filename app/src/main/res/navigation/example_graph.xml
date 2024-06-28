@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.rybeler.exampleviewmodel.ui.fragments.SecondFragment"
-        android:label="SecondFragment" />
+        android:label="SecondFragment" >
+        <argument
+            android:name="tituloText"
+            app:argType="string" />
+    </fragment>
 </navigation>
