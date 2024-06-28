@@ -42,10 +42,10 @@ private class QueryInterceptor : Interceptor {
         val originalUrl = original.url
 
         val ts = Date().time
-        val hash = generateHash(ts, "PRIVATE_KEY", "PUBLIC_KEY")
+        val hash = generateHash(ts, "cec08f373843c610820543716b92d1036f7a5ec4", "796693a7d0db6653c1eb313d38a938f3")
 
         val url = originalUrl.newBuilder()
-            .addQueryParameter("apikey", "PUBLIC_KEY")
+            .addQueryParameter("apikey", "796693a7d0db6653c1eb313d38a938f3")
             .addQueryParameter("ts", ts.toString())
             .addQueryParameter("hash", hash)
             .build()
